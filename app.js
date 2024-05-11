@@ -3,6 +3,8 @@ import ReactDOM from "react-dom/client";
 
 const RestaurantCard = (props) => {
   const { resData } = props;
+  const { name, cuisines, avgRating } = resData.info;
+  const { deliveryTime } = resData.info.sla;
   console.log(props);
   return (
     <div className="res-card">
@@ -14,10 +16,10 @@ const RestaurantCard = (props) => {
           resData.info.cloudinaryImageId
         }
       ></img>
-      <h4>{resData.info.name}</h4>
-      <h5>{resData.info.cuisines.join(", ")}</h5>
-      <h5>{resData.info.avgRating} stars</h5>
-      <h5>{resData.info.sla.deliveryTime}</h5>
+      <h4>{name}</h4>
+      <h5>{cuisines.join(", ")}</h5>
+      <h5>{avgRating} stars</h5>
+      <h5>In {deliveryTime} minutes</h5>
     </div>
   );
 };
@@ -1490,9 +1492,13 @@ const Body = () => {
     <div className="body">
       <div className="search">Search</div>
       <div className="res-container">
-        <RestaurantCard resData={restaurantList[0]} />
+        {/* <RestaurantCard resData={restaurantList[0]} />
         <RestaurantCard resData={restaurantList[1]} />
-        <RestaurantCard resData={restaurantList[2]} />
+        <RestaurantCard resData={restaurantList[2]} /> */}
+
+        {restaurantList.map((restaurant) => (
+          <RestaurantCard resData={restaurant} />
+        ))}
       </div>
     </div>
   );
