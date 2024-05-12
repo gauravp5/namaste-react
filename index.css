@@ -50,3 +50,15 @@
 .filter {
   margin: 10px;
 }
+
+.shimmer-box {
+  display: flex;
+}
+
+.shimmer-cards {
+  height: 400px;
+  width: 200px;
+  margin: 10px;
+  background-color: bisque;
+  padding: 5px;
+}
