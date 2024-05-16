@@ -49,6 +49,7 @@
 
 .filter {
   margin: 10px;
+  display: flex;
 }
 
 .shimmer-box {
@@ -61,4 +62,15 @@
   margin: 10px;
   background-color: bisque;
   padding: 5px;
+}
+
+.btn-login {
+  padding: 0 20 px;
+  cursor: pointer;
+}
+
+.search {
+}
+
+.search-box {
 }
